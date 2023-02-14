@@ -36,7 +36,3 @@ for file_name in files_names:
             if not os.path.exists("classified/" + str(index)): os.mkdir("classified/" + str(index))
             shutil.move("images/" + file_name, "classified/" + str(index) + "/" + file_name)
             show_image = False
-
-
-
-    
