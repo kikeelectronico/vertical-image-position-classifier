@@ -2,7 +2,13 @@ import cv2
 import os
 import shutil
 
+if not os.path.exists("images"): os.mkdir("images")
+
 files_names = os.listdir("./images")
+
+if len(files_names) == 0:
+    print("No images to be classified")
+    exit()
 
 for file_name in files_names:
     show_image = True
