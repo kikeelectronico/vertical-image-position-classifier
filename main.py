@@ -1,5 +1,6 @@
 import cv2
 import os
+import shutil
 
 files_names = os.listdir("./images")
 
@@ -31,7 +32,11 @@ for file_name in files_names:
         elif key == 50:
             index += 1
         elif key == 13:
+            if not os.path.exists("classified"): os.mkdir("classified")
+            if not os.path.exists("classified/" + str(index)): os.mkdir("classified/" + str(index))
+            shutil.move("images/" + file_name, "classified/" + str(index) + "/" + file_name)
             show_image = False
+
 
 
     
