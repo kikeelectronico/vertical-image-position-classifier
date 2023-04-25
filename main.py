@@ -38,6 +38,8 @@ for file_name in files_names:
         image_with_overlay = cv2.addWeighted(overlay, ALPHA, image, 1 - ALPHA, 0)
         # Show the image
         cv2.imshow('Visor', image_with_overlay)
+        cropped_image = image[view_port_top_left_corner[1]:view_port_bottom_right_corner[1], 0:view_port_bottom_right_corner[0]]
+        cv2.imshow('Visor 2', cropped_image)
         # Wait for user input
         key = cv2.waitKey(0)
         if key == 49:
